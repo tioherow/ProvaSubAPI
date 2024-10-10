@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Criar Novo Curso</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Criar Novo Curso</h1>
+        <form action="/cursos" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea class="form-control" id="descricao" name="descricao" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="duracao">Duração</label>
+                <input type="text" class="form-control" id="duracao" name="duracao" required>
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <input type="number" class="form-control" id="preco" name="preco" required>
+            </div>
+            <button type="submit" class="btn btn-success">Criar Curso</button>
+            <a href="/cursos" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

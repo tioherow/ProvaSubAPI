@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Lista de Cursos</h1>
+        <a href="/cursos/novo" class="btn btn-primary mb-3">Adicionar Novo Curso</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Curso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cursos.forEach(curso => { %>
+                    <tr>
+                        <td><%= curso.id %></td>
+                        <td><%= curso.nome %></td>
+                        <td>
+                            <a href="/cursos/<%= curso.id %>/editar" class="btn btn-warning">Editar</a>
+                            <form action="/cursos/<%= curso.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este curso?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

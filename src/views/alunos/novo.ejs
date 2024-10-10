@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Criar Novo Aluno</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Criar Novo Aluno</h1>
+        <form action="/alunos" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade</label>
+                <input type="number" class="form-control" id="idade" name="idade" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <button type="submit" class="btn btn-success">Criar Aluno</button>
+            <a href="/alunos" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

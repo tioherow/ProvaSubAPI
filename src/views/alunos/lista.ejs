@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Alunos</h1>
+        <a href="/alunos/novo" class="btn btn-primary mb-3">Novo Aluno</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% alunos.forEach(aluno => { %>
+                    <tr>
+                        <td><%= aluno.student_id %></td>
+                        <td><%= aluno.name %></td>
+                        <td><%= aluno.age %></td>
+                        <td><%= aluno.email %></td>
+                        <td>
+                            <form action="/alunos/<%= aluno.student_id %>" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este aluno?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

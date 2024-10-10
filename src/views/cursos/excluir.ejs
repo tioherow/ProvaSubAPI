@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Excluir Curso</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Excluir Curso</h1>
+        <p>Tem certeza que deseja excluir este curso?</p>
+        <form action="/cursos/<%= cursoId %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a href="/cursos" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
